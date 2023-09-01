@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
 
-function App() {
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+`;
+
+const Box = styled.div`
+  width: 300px;
+  height: 300px;
+  background-color: #3498db;
+  color: orange;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 250px;
+    height: 250px;
+    font-size: 30px;
+    color: white
+  }
+
+  @media (max-width: 480px) {
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+    color: green;
+  }
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Box>
+        <p>Responsive Box</p>
+        <p>Try resizing the window to see different layouts!</p>
+      </Box>
+    </Container>
   );
-}
+};
 
 export default App;
